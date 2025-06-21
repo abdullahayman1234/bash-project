@@ -27,7 +27,7 @@ function create_table() {
     
     echo "table_name:$tablename" >> ".$tablename.meta"
     echo "columns:$colnum" >> ".$tablename.meta"
-    echo "primary_key:1" >> ".$tablename.meta"  # First column is always primary key
+    echo "primary_key:1" >> ".$tablename.meta" 
     
     for ((i=1; i<=colnum; i++)); do
         while true; do
@@ -39,17 +39,17 @@ function create_table() {
             fi
             
             if [[ $i -eq 1 ]]; then
-                # First column is always integer primary key
+                
                 echo "column:$i:$colname:int:primary" >> ".$tablename.meta"
                 break
             else
-                # Prompt for type for other columns
+               
                 PS3="Select column type for $colname: "
                 select type in "int" "str"; do
                     case $REPLY in
                         1|2) 
                             echo "column:$i:$colname:$type" >> ".$tablename.meta"
-                            break 2  # Break both select and while loops
+                            break 2  
                             ;;
                         *) 
                             echo -e "${RED}Invalid option! Please select 1 or 2.${NC}"
