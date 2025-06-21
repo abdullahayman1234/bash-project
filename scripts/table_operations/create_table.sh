@@ -25,7 +25,6 @@ function create_table() {
         fi
     done
     
-    # Write metadata header
     echo "table_name:$tablename" >> ".$tablename.meta"
     echo "columns:$colnum" >> ".$tablename.meta"
     echo "primary_key:1" >> ".$tablename.meta"  # First column is always primary key
