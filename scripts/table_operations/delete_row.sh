@@ -10,13 +10,11 @@ function delete_row() {
     
     read -p "Enter primary key value to delete: " pkval
     
-    # Check if row exists
     if ! grep -q "^$pkval:" "$tablename"; then
         echo -e "${RED}Row with PK '$pkval' not found!${NC}"
         return
     fi
     
-    # Delete row
     sed -i "/^$pkval:/d" "$tablename"
     echo -e "${GREEN}Row deleted successfully!${NC}"
 }
