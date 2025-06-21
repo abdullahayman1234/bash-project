@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Get the absolute path to this script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Source database operations using absolute paths
 source "${SCRIPT_DIR}/../database_operations/create_database.sh"
 source "${SCRIPT_DIR}/../database_operations/list_databases.sh"
 source "${SCRIPT_DIR}/../database_operations/connect_database.sh"
