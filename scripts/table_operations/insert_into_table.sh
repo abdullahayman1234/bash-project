@@ -33,7 +33,6 @@ function insert_into_table() {
         done
     done
     
-    # Join array elements with colons
     IFS=':' eval 'joined="${values[*]}"'
     echo "$joined" >> "$tablename"
     echo -e "${GREEN}Data inserted successfully!${NC}"
